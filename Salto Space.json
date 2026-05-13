@@ -1,0 +1,381 @@
+{
+    "schema": {
+        "crud_objects": {
+            "AccessLevels": {
+                "operations": {
+                    "UsersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "v1/AccessLevels"
+                        },
+                        "processing_options": {
+                            "output_field": "data"
+                        }
+                    },
+                    "AccessLevelCreate": {
+                        "method": "post",
+                        "semantics": "create",
+                        "call": {
+                            "path": "v1/AccessLevels"
+                        },
+                        "resource_mandatory": [
+                            "name",
+                            "description",
+                            "doors.extDoorId"
+                        ]
+                    },
+                    "AccessLevelUpdate": {
+                        "method": "post",
+                        "semantics": "update",
+                        "call": {
+                            "path": "v1/AccessLevels/{extGroupId}"
+                        },
+                        "resource_mandatory": [
+                            "extGroupId"
+                        ]
+                    },
+                    "AccessLevelDelete": {
+                        "method": "delete",
+                        "semantics": "delete",
+                        "call": {
+                            "path": "v1/AccessLevels/{extGroupId}"
+                        },
+                        "resource_mandatory": [
+                            "extGroupId"
+                        ]
+                    }
+                },
+                "key": "extGroupId",
+                "resources": {
+                    "extGroupId": "string*",
+                    "name": "string*",
+                    "description": "string*",
+                    "doors": [
+                        {
+                            "extDoorId": "string*"
+                        }
+                    ]
+                }
+            },
+            "Doors": {
+                "operations": {
+                    "DoorsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "v1/Doors"
+                        },
+                        "processing_options": {
+                            "output_field": "data"
+                        }
+                    },
+                    "DoorCreate": {
+                        "method": "post",
+                        "semantics": "create",
+                        "call": {
+                            "path": "v1/Doors"
+                        },
+                        "resource_mandatory": [
+                            "name",
+                            "description"
+                        ]
+                    },
+                    "DoorUpdate": {
+                        "method": "post",
+                        "semantics": "update",
+                        "call": {
+                            "path": "v1/Doors/{extDoorId}"
+                        },
+                        "resource_mandatory": [
+                            "extDoorId"
+                        ]
+                    },
+                    "DoorDelete": {
+                        "method": "delete",
+                        "semantics": "delete",
+                        "call": {
+                            "path": "v1/Doors/{extDoorId}"
+                        },
+                        "resource_mandatory": [
+                            "extDoorId"
+                        ]
+                    }
+                },
+                "key": "extDoorId",
+                "resources": {
+                    "antiPassBackEnabled": "string*",
+                    "auditOnKeys": "string*",
+                    "automaticChangesTableId": "string*",
+                    "batteryStatus": "string*",
+                    "description": "string*",
+                    "doorFunctions": "string*",
+                    "doorLocations": "string*",
+                    "doorZones": "string*",
+                    "extDoorId": "string*",
+                    "gpf1": "string*",
+                    "gpf2": "string*",
+                    "keypadCode": "string*",
+                    "name": "string*",
+                    "openingMode": "string*",
+                    "openTime": "string*",
+                    "openTimeAda": "string*",
+                    "outwardAntiPassBack": "string*",
+                    "timedPeriodsTableId": "string*",
+                    "updateRequired": "string*",
+                    "extPartitionID": "string*"
+                }
+            },
+            "Users": {
+                "operations": {
+                    "UsersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "v1/Users"
+                        },
+                        "processing_options": {
+                            "output_field": "data"
+                        }
+                    },
+                    "UserCreate": {
+                        "method": "post",
+                        "semantics": "create",
+                        "call": {
+                            "path": "v1/Users"
+                        },
+                        "resource_mandatory": [
+                            "firstName",
+                            "lastName"
+                        ]
+                    },
+                    "UserUpdate": {
+                        "method": "post",
+                        "semantics": "update",
+                        "call": {
+                            "path": "v1/Users/{extUserId}"
+                        },
+                        "resource_mandatory": [
+                            "extUserId"
+                        ]
+                    },
+                    "UserDelete": {
+                        "method": "delete",
+                        "semantics": "delete",
+                        "call": {
+                            "path": "v1/Users/{extUserId}"
+                        },
+                        "resource_mandatory": [
+                            "extUserId"
+                        ]
+                    }
+                },
+                "key": "extUserId",
+                "resources": {
+                    "autoKeyRomCode": "string*",
+                    "currentRomCode": "string*",
+                    "extUserId": "string*",
+                    "title": "string*",
+                    "firstName": "string*",
+                    "lastName": "string*",
+                    "pinEnabled": "boolean*",
+                    "pinCode": "string*",
+                    "authorizationCodeList": "string*",
+                    "gpf1": "string*",
+                    "gpf2": "string*",
+                    "gpf3": "string*",
+                    "gpf4": "string*",
+                    "gpf5": "string*",
+                    "userActivation": "string*",
+                    "userActivationString": "string*",
+                    "isBanned": "boolean*",
+                    "userExpiration": "string*",
+                    "userExpirationString": "string*",
+                    "userExpirationEnabled": "boolean*",
+                    "userExpirationEnabledString": "string*",
+                    "currentKeyStatus": "string*",
+                    "zoneAccessRights": [
+                        {
+                            "extUserID": "string*",
+                            "extZoneID": "string*",
+                            "period": {
+                                "endDate": {
+                                    "value": "_:string*"
+                                },
+                                "startDate": {
+                                    "value": "_:string*"
+                                }
+                            },
+                            "timezoneTableId": "string*",
+                            "usePeriod": "boolean*",
+                            "usePeriodString": "string*"
+                        }
+                    ],
+                    "groupMembership": [
+                        {
+                            "extUserID": "string*",
+                            "extGroupID": "string*",
+                            "period": {
+                                "endDate": {
+                                    "value": "_:string*"
+                                },
+                                "startDate": {
+                                    "value": "_:string*"
+                                }
+                            },
+                            "usePeriod": {
+                                "value": "_:boolean*"
+                            },
+                            "usePeriodString": "string*"
+                        }
+                    ],
+                    "overridePrivacy": "boolean*",
+                    "phoneNumber": "string*",
+                    "mobileAppType": "string*",
+                    "keyRevalidationEnabled": "string*",
+                    "keyRevalidationPeriod": "string*",
+                    "keyRevalidationPeriodUnit": "string*",
+                    "extendedOpeningTimeEnabled": "boolean*",
+                    "overrideLockdown": "boolean*",
+                    "lockdownEnabled": "boolean*",
+                    "officeEnabled": "boolean*",
+                    "antipassbackEnabled": "boolean*",
+                    "auditorInKeyEnabled": "boolean*",
+                    "keyIsCancellableThroughBlacklist": "boolean*",
+                    "extPartitionID": "string*"
+                }
+            },
+            "Zones": {
+                "operations": {
+                    "UsersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "v1/Zones"
+                        },
+                        "processing_options": {
+                            "output_field": "data"
+                        }
+                    },
+                    "ZoneCreate": {
+                        "method": "post",
+                        "semantics": "create",
+                        "call": {
+                            "path": "v1/Zones"
+                        },
+                        "resource_mandatory": [
+                            "name",
+                            "description",
+                            "doors.extDoorId"
+                        ]
+                    },
+                    "ZoneUpdate": {
+                        "method": "post",
+                        "semantics": "update",
+                        "call": {
+                            "path": "v1/Zones/{extZoneId}"
+                        },
+                        "resource_mandatory": [
+                            "extZoneId"
+                        ]
+                    },
+                    "ZoneDelete": {
+                        "method": "delete",
+                        "semantics": "delete",
+                        "call": {
+                            "path": "v1/Zones/{extZoneId}"
+                        },
+                        "resource_mandatory": [
+                            "extZoneId"
+                        ]
+                    }
+                },
+                "key": "extZoneId",
+                "resources": {
+                    "description": "string*",
+                    "extZoneId": "string*",
+                    "freeAssignmentGroup": "string*",
+                    "isFreeAssignment": "string*",
+                    "isLow": "string*",
+                    "name": "string*",
+                    "doors": [
+                        {
+                            "extDoorId": "string*"
+                        }
+                    ],
+                    "extPartitionID": "string*"
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "https://{tenant_id}/api/",
+            "get": {
+            },
+            "authentication": "client_credentials",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "v1/districts"
+            },
+            "socket_timeout": 3600000,
+            "accept": "application/json",
+            "retry": [
+                {
+                    "type": "statusCode",
+                    "statusCode": 429,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 12,
+                        "waitTime": 60
+                    }
+                },
+                {
+                    "type": "statusCode",
+                    "statusCode": 500,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 12,
+                        "waitTime": 60
+                    }
+                },
+                {
+                    "type": "connectionError"
+                }
+            ],
+            "authOptions": {
+                "authUrl": "https://{token_uri}"
+            }
+        }
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "tenant_id",
+                "type": "textbox",
+                "label": "Tenent URL:",
+                "value": "",
+                "required": true,
+                "order": 1
+            },
+            {
+                "name": "token_uri",
+                "type": "textbox",
+                "label": "OAuth Token URI",
+                "value": "my.domain.com/connect/token",
+                "required": true,
+                "order": 2
+            },
+            {
+                "name": "client_id",
+                "type": "textbox",
+                "label": "Client ID",
+                "required": true,
+                "order": 3
+            },
+            {
+                "name": "client_secret",
+                "type": "textbox",
+                "label": "Client Secret",
+                "required": true,
+                "order": 4
+            }
+        ]
+    }
+}
