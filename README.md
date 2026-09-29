@@ -1,4 +1,7 @@
 # Salto Space
+
+Read the [Salto Space integration documentation](https://docs.nimsuite.com/en/integrations/salto-space) for connector details and related guides.
+
 <img src="https://github.com/Tools4everBV/HelloID-Conn-Prov-Target-SaltoSpace/blob/main/Logo.png?raw=true" width="256px" />
 
 > [!IMPORTANT]  
